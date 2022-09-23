@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Ejercicio1</string>
+    <string name="introduzca_un_n_mero">Introduzca un número:</string>
+    <string name="introduzca_otro_n_mero">Introduzca otro número:</string>
+    <string name="sumar">Sum</string>
+    <string name="restar">Res</string>
+    <string name="multiplicar">Mul</string>
+    <string name="dividir">Div</string>
+</resources>

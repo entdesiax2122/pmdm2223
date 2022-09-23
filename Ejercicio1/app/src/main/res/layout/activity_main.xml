@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/introduzca_un_n_mero"
+        android:textSize="@dimen/labels"></TextView>
+
+    <EditText
+        android:id="@+id/etA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"></EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/introduzca_otro_n_mero"
+        android:textSize="@dimen/labels"></TextView>
+
+    <EditText
+        android:id="@+id/etB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"></EditText>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btSum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sumar"
+            android:layout_margin="3dp"></Button>
+
+        <Button
+            android:id="@+id/btRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/restar"
+            android:layout_margin="3dp"></Button>
+
+        <Button
+            android:id="@+id/btMul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/multiplicar"
+            android:layout_margin="3dp"></Button>
+
+        <Button
+            android:id="@+id/btDiv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dividir"
+            android:layout_margin="3dp"></Button>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/etRes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Resultado"
+        android:textAlignment="center"
+        android:textSize="@dimen/labels"></TextView>
+</LinearLayout>
