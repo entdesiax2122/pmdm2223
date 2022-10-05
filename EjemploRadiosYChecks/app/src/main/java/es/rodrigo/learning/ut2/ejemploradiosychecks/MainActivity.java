@@ -16,7 +16,10 @@ public class MainActivity extends Activity {
     private TextView respuesta, ccc;
     private RadioButton rbOpcion1;
     private RadioButton rbOpcion2;
-    private Button btnAceptar, btnCaja;
+    private Button btnAceptar;
+
+
+    private Button btnCaja;
     private CheckBox chkb;
     private Toast mensaje;
 
@@ -34,19 +37,21 @@ public class MainActivity extends Activity {
         ccc=(TextView)findViewById(R.id.chk);
         chkb=(CheckBox)findViewById(R.id.si);
 
+        // Trabajando sobre el evento de otro widget, pero
+        // evaluamos isChecked de los RadioButton.
         btnAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 if (rbOpcion1.isChecked())
                     respuesta.setText("Está seleccionada la opción 1");
                 else
                     respuesta.setText("Está seleccionada la opción 2");
-
             }
         });
 
-        View.OnClickListener list = new View.OnClickListener() {
+        // Ahora, sin embargo, preguntamos por el id de la vista asociada
+        // a este evento (el view que llega en la llamada al onClick)
+        View.OnClickListener myOnClickAction = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String opcion = "";
@@ -62,8 +67,10 @@ public class MainActivity extends Activity {
                 respuesta.setText("La opción seleccionada: " + opcion);
             }
         };
-        rbOpcion1.setOnClickListener(list);
-        rbOpcion2.setOnClickListener(list);
+        // Estamos añadiendo un mismo método listener para el
+        // evento onClick de todos los RadioButton.
+        rbOpcion1.setOnClickListener(myOnClickAction);
+        rbOpcion2.setOnClickListener(myOnClickAction);
 
 
         btnCaja.setOnClickListener(new View.OnClickListener() {
