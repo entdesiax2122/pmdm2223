@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BtnChkBoxRButton</string>
+    <string name="texto">Elige una de las opciones</string>
+    <string name="opcion_1">Opción 1</string>
+    <string name="opcion_2">Opción 2</string>
+    <string name="aceptar">Aceptar</string>
+</resources>
