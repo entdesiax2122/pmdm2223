@@ -1,7 +1,5 @@
 package es.rodrigo.learning.ut2.ejemploradiosychecks;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +11,7 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
-    private TextView respuesta, ccc;
+    private TextView respuesta, chk;
     private RadioButton rbOpcion1;
     private RadioButton rbOpcion2;
     private Button btnAceptar;
@@ -34,8 +32,12 @@ public class MainActivity extends Activity {
         rbOpcion2 = (RadioButton)findViewById(R.id.RbOpcion2);
         btnAceptar = (Button)findViewById(R.id.btnAceptar);
         btnCaja = (Button)findViewById(R.id.btnCaja);
-        ccc=(TextView)findViewById(R.id.chk);
         chkb=(CheckBox)findViewById(R.id.si);
+
+        chk = (TextView) findViewById(R.id.chk);
+        chk.setVisibility(View.GONE);
+
+
 
         // Trabajando sobre el evento de otro widget, pero
         // evaluamos isChecked de los RadioButton.
@@ -78,7 +80,7 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
 
                 if (chkb.isChecked())
-                    ccc.setText("Marcado");
+                    chk.setText("Marcado");
 
             }
         });
@@ -93,6 +95,7 @@ public class MainActivity extends Activity {
                 }
                 else {
                     chkb.setText("Checkbox desmarcado!");
+                    chkb.setVisibility(View.VISIBLE);
                 }
 
 
