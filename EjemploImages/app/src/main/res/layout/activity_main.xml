@@ -53,14 +53,14 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:layout_margin="10dp"
-                android:src="@drawable/timebtn100"/>
+                android:src="@drawable/timebtnselector"/>
 
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:layout_margin="10dp"
-                android:src="@drawable/speedbtn100"/>
+                android:src="@drawable/speedbtnselector"/>
         </LinearLayout>
     </LinearLayout>
 
