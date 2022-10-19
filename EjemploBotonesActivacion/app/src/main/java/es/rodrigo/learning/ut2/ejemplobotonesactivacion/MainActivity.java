@@ -16,11 +16,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final ToggleButton toggle = (ToggleButton)
+                findViewById(R.id.toggleButton);
+        final Switch switchl = (Switch) findViewById(R.id.switchl);
+
         final CompoundButton.OnCheckedChangeListener mylistener =
                 new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton,
                                          boolean isChecked) {
+                if (compoundButton.getId()==R.id.toggleButton) {
+                   // el evento es del toggle
+
+                } else if (compoundButton.getId()==R.id.switchl) {
+                    // el evento es del switch
+
+//                    switchl.setText();
+                }
                 if (isChecked) {
                     // The toggle is enabled
                     Toast.makeText(MainActivity.this,
@@ -34,9 +46,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
-        final ToggleButton toggle = (ToggleButton)
-                findViewById(R.id.toggleButton);
-        final Switch switchl = (Switch) findViewById(R.id.switchl);
         toggle.setOnCheckedChangeListener(mylistener);
         switchl.setOnCheckedChangeListener(mylistener);
 
