@@ -1,10 +1,10 @@
 package es.rodrigo.learning.pmdm.ejemplolistview3.repositorios;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public interface BaseRepositorio<T> {
-    public Integer guardar(T obj);
-    public Integer eliminar(T obj);
-    public T recuperar(Integer id);
-    public ArrayList<T> recuperarTodos();
+    Integer guardar(T obj);
+    Integer eliminar(T obj);
+    T recuperar(Integer id);
+    List<T> recuperarTodos();
 }

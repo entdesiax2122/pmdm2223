@@ -37,7 +37,13 @@ public class DepartamentoRepositorioListImpl implements DepartamentoRepositorio 
 
     @Override
     public Departamento recuperar(Integer id) {
-        return null;
+        Departamento encontrado = null;
+        for(Departamento d : lista) {
+            if (d.getId().compareTo(id) == 0) {
+                encontrado = d;
+            }
+        }
+        return encontrado;
     }
 
     @Override
