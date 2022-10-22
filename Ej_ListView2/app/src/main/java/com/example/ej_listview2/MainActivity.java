@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 //Creamos el Intent
                 String nom=lblNombre.getText().toString();
                 listaUsuario.add(nom);
+                adaptador.notifyDataSetChanged();
             }
         });
 
