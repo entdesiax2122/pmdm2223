@@ -5,18 +5,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
 import java.util.List;
 
 import es.rodrigo.learning.pmdm.ejemplolistviewcustomizado.R;
+import es.rodrigo.learning.pmdm.ejemplolistviewcustomizado.adaptadores.DepartamentoAdapter;
 import es.rodrigo.learning.pmdm.ejemplolistviewcustomizado.modelos.Departamento;
 import es.rodrigo.learning.pmdm.ejemplolistviewcustomizado.repositorios.DepartamentoRepositorio;
 import es.rodrigo.learning.pmdm.ejemplolistviewcustomizado.repositorios.DepartamentoRepositorioListImpl;
@@ -28,7 +24,10 @@ public class MainActivity extends Activity {
     private EditText etNombre;
     private ListView lvDeptos;
     private List<Departamento> lista;
-    private ArrayAdapter adaptadorDeptos;
+    private DepartamentoAdapter adaptadorDeptos;
+    private View oldViewGround;
+    private int indiceDepartamento = -1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,19 +39,32 @@ public class MainActivity extends Activity {
         etNombre = (EditText) findViewById(R.id.etNombre);
         lvDeptos = (ListView) findViewById(R.id.lvDeptos);
 
+        // preparar y cargar listview de departamentos
+        // añadimos la cabecera
+        ViewGroup header = (ViewGroup) getLayoutInflater().inflate(R.layout.departamento_list_header, lvDeptos, false);
+        if (lvDeptos.getHeaderViewsCount() == 0) {
+            lvDeptos.addHeaderView(header);
+        }
+        // cargamos la lista de departamentos
         lista = departamentoRepositorio.recuperarTodos();
-        adaptadorDeptos = new ArrayAdapter(getApplicationContext(),
-                android.R.layout.simple_list_item_1, lista) {
-            @Override
-            public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-                View view = super.getView(position, convertView, parent);
-                TextView text1 = (TextView) view.findViewById(android.R.id.text1);
-                text1.setText(lista.get(position).getId() + " - " + lista.get(position).getNombre());
-                return view;
-            }
-        };
+        // creamos el Adaptador personalizado y se lo añadimos al ListView
+        adaptadorDeptos = new DepartamentoAdapter(getBaseContext(), lista);
         lvDeptos.setAdapter(adaptadorDeptos);
-
+        // programamos el AdapterView.OnItemClickListener
+        lvDeptos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                if (position > 0) {
+                    indiceDepartamento = position - 1;
+                    if (oldViewGround != null && view != oldViewGround) {
+                        oldViewGround.setBackgroundResource(R.drawable.recuadro_list_item);
+                    }
+                    view.setBackgroundColor(getResources().getColor(R.color.amber));
+                    oldViewGround = view;
+                }
+            }
+        });
+        // fin preparación listview de departamentos
         btNuevoDepto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,13 +75,6 @@ public class MainActivity extends Activity {
                     lista = departamentoRepositorio.recuperarTodos();
                     adaptadorDeptos.notifyDataSetChanged();
                 }
-            }
-        });
-
-        lvDeptos.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                return false;
             }
         });
     }

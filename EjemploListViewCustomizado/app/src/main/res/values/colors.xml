@@ -7,4 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="light_grey">#D5D2D2</color>
+    <color name="dark_grey">#514F4F</color>
+    <color name="md_statusbar_translucent">#4000</color>
+    <color name="amber">#fff8e1</color>
 </resources>
