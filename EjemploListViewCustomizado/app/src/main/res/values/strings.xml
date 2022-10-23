@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">EjemploListViewCustomizado</string>
+    <string name="campo_obligatorio">Campo obligatorio</string>
+</resources>
