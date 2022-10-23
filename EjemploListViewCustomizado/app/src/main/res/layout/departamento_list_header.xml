@@ -22,7 +22,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
-        android:layout_width="150dp"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:padding="5dp"

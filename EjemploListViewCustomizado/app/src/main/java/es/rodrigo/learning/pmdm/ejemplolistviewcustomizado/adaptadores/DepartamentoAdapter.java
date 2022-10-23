@@ -75,7 +75,7 @@ public class DepartamentoAdapter extends BaseAdapter {
             listViewHolder = (DepartamentoViewHolder)convertView.getTag();
         }
 
-        listViewHolder.tvIdDepto.setText(listDepartamentos.get(position).getId());
+        listViewHolder.tvIdDepto.setText(listDepartamentos.get(position).getId().toString());
         listViewHolder.tvNombreDepto.setText(listDepartamentos.get(position).getNombre());
 
         return convertView;

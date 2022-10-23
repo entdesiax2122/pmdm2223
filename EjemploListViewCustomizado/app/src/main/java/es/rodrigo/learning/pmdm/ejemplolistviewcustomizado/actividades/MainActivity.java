@@ -78,4 +78,14 @@ public class MainActivity extends Activity {
             }
         });
     }
+
+    public void editarDepto(View view) {
+
+    }
+
+    public void borrarDepto(View view) {
+
+    }
+
 }
+
