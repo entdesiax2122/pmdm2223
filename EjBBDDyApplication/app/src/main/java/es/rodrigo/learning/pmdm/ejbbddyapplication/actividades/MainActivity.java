@@ -11,11 +11,11 @@ import android.widget.ListView;
 
 import java.util.List;
 
+import es.rodrigo.learning.pmdm.ejbbddyapplication.ProyectoApplication;
 import es.rodrigo.learning.pmdm.ejbbddyapplication.R;
 import es.rodrigo.learning.pmdm.ejbbddyapplication.adaptadores.DepartamentoAdapter;
 import es.rodrigo.learning.pmdm.ejbbddyapplication.modelos.Departamento;
 import es.rodrigo.learning.pmdm.ejbbddyapplication.repositorios.DepartamentoRepositorio;
-import es.rodrigo.learning.pmdm.ejbbddyapplication.repositorios.DepartamentoRepositorioListImpl;
 import es.rodrigo.learning.pmdm.ejbbddyapplication.util.Utilidades;
 
 public class MainActivity extends Activity {
@@ -35,7 +35,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         departamentoRepositorio =
-                DepartamentoRepositorioListImpl.getInstancia();
+                ProyectoApplication.getDepartamentoRepositorio();
         btNuevoDepto = (Button) findViewById(R.id.btNuevoDepto);
         etNombre = (EditText) findViewById(R.id.etNombre);
         lvDeptos = (ListView) findViewById(R.id.lvDeptos);
