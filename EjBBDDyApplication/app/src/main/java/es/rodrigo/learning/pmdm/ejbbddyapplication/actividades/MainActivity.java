@@ -1,4 +1,4 @@
-package es.rodrigo.learning.pmdm.ejemplolistviewcustomizado.actividades;
+package es.rodrigo.learning.pmdm.ejbbddyapplication.actividades;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -11,12 +11,12 @@ import android.widget.ListView;
 
 import java.util.List;
 
-import es.rodrigo.learning.pmdm.ejemplolistviewcustomizado.R;
-import es.rodrigo.learning.pmdm.ejemplolistviewcustomizado.adaptadores.DepartamentoAdapter;
-import es.rodrigo.learning.pmdm.ejemplolistviewcustomizado.modelos.Departamento;
-import es.rodrigo.learning.pmdm.ejemplolistviewcustomizado.repositorios.DepartamentoRepositorio;
-import es.rodrigo.learning.pmdm.ejemplolistviewcustomizado.repositorios.DepartamentoRepositorioListImpl;
-import es.rodrigo.learning.pmdm.ejemplolistviewcustomizado.util.Utilidades;
+import es.rodrigo.learning.pmdm.ejbbddyapplication.R;
+import es.rodrigo.learning.pmdm.ejbbddyapplication.adaptadores.DepartamentoAdapter;
+import es.rodrigo.learning.pmdm.ejbbddyapplication.modelos.Departamento;
+import es.rodrigo.learning.pmdm.ejbbddyapplication.repositorios.DepartamentoRepositorio;
+import es.rodrigo.learning.pmdm.ejbbddyapplication.repositorios.DepartamentoRepositorioListImpl;
+import es.rodrigo.learning.pmdm.ejbbddyapplication.util.Utilidades;
 
 public class MainActivity extends Activity {
     private DepartamentoRepositorio departamentoRepositorio;
