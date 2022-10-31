@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
 import es.rodrigo.learning.pmdm.ejbbddyapplication.repositorios.DepartamentoRepositorio;
-import es.rodrigo.learning.pmdm.ejbbddyapplication.repositorios.DepartamentoRepositorioListImpl;
 import es.rodrigo.learning.pmdm.ejbbddyapplication.repositorios.DepartamentoRepositorioSQLiteImpl;
 
 public class ProyectoApplication extends Application {
@@ -23,7 +22,7 @@ public class ProyectoApplication extends Application {
         if (departamentoRepositorio == null) {
             // aquí decidimos qué implementación queremos usar
             departamentoRepositorio = new DepartamentoRepositorioSQLiteImpl(db);
-//            departamentoRepositorio = new DepartamentoRepositorioListImpl();
+            // departamentoRepositorio = new DepartamentoRepositorioListImpl();
         }
         return departamentoRepositorio;
     }

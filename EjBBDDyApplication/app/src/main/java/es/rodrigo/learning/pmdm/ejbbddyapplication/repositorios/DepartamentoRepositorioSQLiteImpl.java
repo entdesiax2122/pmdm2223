@@ -12,7 +12,7 @@ public class DepartamentoRepositorioSQLiteImpl implements DepartamentoRepositori
 
     public DepartamentoRepositorioSQLiteImpl(SQLiteDatabase db) {
         this.db = db;
-        db.execSQL("CREATE TABLE IF NOT EXISTS departamentos(id INTEGER, nombre TEXT);");
+        db.execSQL("CREATE TABLE IF NOT EXISTS departamentos(id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT NOT NULL);");
     }
 
     @Override
