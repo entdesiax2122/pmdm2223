@@ -16,21 +16,45 @@ public class DepartamentoRepositorioSQLiteImpl implements DepartamentoRepositori
         this.db = db;
         db.execSQL("CREATE TABLE IF NOT EXISTS departamentos(id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT NOT NULL);");
 
-        db.execSQL("INSERT INTO departamentos(nombre) VALUES ('Matemáticas');");
-        db.execSQL("INSERT INTO departamentos(nombre) VALUES ('Lengua');");
-        db.execSQL("INSERT INTO departamentos(nombre) VALUES ('Biología');");
-        db.execSQL("INSERT INTO departamentos(nombre) VALUES ('Informática');");
+//        db.execSQL("INSERT INTO departamentos(nombre) VALUES ('Matemáticas');");
+//        db.execSQL("INSERT INTO departamentos(nombre) VALUES ('Lengua');");
+//        db.execSQL("INSERT INTO departamentos(nombre) VALUES ('Biología');");
+//        db.execSQL("INSERT INTO departamentos(nombre) VALUES ('Informática');");
     }
 
     @Override
     public Integer guardar(Departamento d) {
+        if (d.getId() == null) {
+            db.execSQL("INSERT INTO departamentos(nombre) VALUES ('" + d.getNombre() + "');");
+            Integer id = getMaxId();
+            d.setId(id);
+        } else {
+            db.execSQL("UPDATE departamentos SET nombre='" + d.getNombre() + "' WHERE id=" + d.getId() + ";");
+        }
+        return d.getId();
+    }
 
-        return null;
+
+    private Integer getMaxId() {
+        Integer res = null;
+        Cursor c = db.rawQuery("SELECT MAX(id) FROM departamentos", null);
+
+        if (c.getCount()>0) {
+            while (c.moveToNext()) {
+                res = c.getInt(0);
+            }
+        }
+        return res;
     }
 
     @Override
     public Integer eliminar(Departamento d) {
-        return null;
+        Integer res  = null;
+        if (d.getId() != null) {
+            db.execSQL("DELETE FROM departamentos WHERE id=" + d.getId() + ";");
+            res = d.getId();
+        }
+        return res;
     }
 
     @Override

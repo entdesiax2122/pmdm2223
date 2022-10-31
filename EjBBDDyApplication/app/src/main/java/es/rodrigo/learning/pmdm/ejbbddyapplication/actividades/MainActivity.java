@@ -79,6 +79,7 @@ public class MainActivity extends Activity {
                     etNombre.setText("");
                     departamentoRepositorio.guardar(d);
                     lista = departamentoRepositorio.recuperarTodos();
+                    adaptadorDeptos.setListDepartamentos(lista);
                     adaptadorDeptos.notifyDataSetChanged();
                 }
             }
@@ -90,7 +91,14 @@ public class MainActivity extends Activity {
     }
 
     public void borrarDepto(View view) {
-
+        indiceDepartamento = adaptadorDeptos.getAdapterItemPosition(view);
+        if (indiceDepartamento != -1 && adaptadorDeptos.getCount() > 0) {
+            Departamento d = lista.get(indiceDepartamento);
+            departamentoRepositorio.eliminar(d);
+            lista = departamentoRepositorio.recuperarTodos();
+            adaptadorDeptos.setListDepartamentos(lista);
+            adaptadorDeptos.notifyDataSetChanged();
+        }
     }
 
 }
