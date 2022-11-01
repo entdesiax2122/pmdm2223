@@ -14,7 +14,9 @@ public class DepartamentoRepositorioSQLiteImpl implements DepartamentoRepositori
 
     public DepartamentoRepositorioSQLiteImpl(SQLiteDatabase db) {
         this.db = db;
-        db.execSQL("CREATE TABLE IF NOT EXISTS departamentos(id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT NOT NULL);");
+        db.execSQL("CREATE TABLE IF NOT EXISTS departamentos(" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "nombre TEXT NOT NULL);");
 
 //        db.execSQL("INSERT INTO departamentos(nombre) VALUES ('Matemáticas');");
 //        db.execSQL("INSERT INTO departamentos(nombre) VALUES ('Lengua');");
@@ -25,11 +27,13 @@ public class DepartamentoRepositorioSQLiteImpl implements DepartamentoRepositori
     @Override
     public Integer guardar(Departamento d) {
         if (d.getId() == null) {
-            db.execSQL("INSERT INTO departamentos(nombre) VALUES ('" + d.getNombre() + "');");
+            db.execSQL("INSERT INTO departamentos(nombre) " +
+                       "VALUES ('" + d.getNombre() + "');");
             Integer id = getMaxId();
             d.setId(id);
         } else {
-            db.execSQL("UPDATE departamentos SET nombre='" + d.getNombre() + "' WHERE id=" + d.getId() + ";");
+            db.execSQL("UPDATE departamentos SET nombre='" + d.getNombre()
+                    + "' WHERE id=" + d.getId() + ";");
         }
         return d.getId();
     }
@@ -37,7 +41,8 @@ public class DepartamentoRepositorioSQLiteImpl implements DepartamentoRepositori
 
     private Integer getMaxId() {
         Integer res = null;
-        Cursor c = db.rawQuery("SELECT MAX(id) FROM departamentos", null);
+        Cursor c = db.rawQuery("SELECT MAX(id) FROM departamentos",
+                null);
 
         if (c.getCount()>0) {
             while (c.moveToNext()) {
@@ -47,11 +52,14 @@ public class DepartamentoRepositorioSQLiteImpl implements DepartamentoRepositori
         return res;
     }
 
+
+
     @Override
     public Integer eliminar(Departamento d) {
         Integer res  = null;
         if (d.getId() != null) {
-            db.execSQL("DELETE FROM departamentos WHERE id=" + d.getId() + ";");
+            db.execSQL("DELETE FROM departamentos " +
+                       "WHERE id=" + d.getId() + ";");
             res = d.getId();
         }
         return res;
@@ -60,7 +68,16 @@ public class DepartamentoRepositorioSQLiteImpl implements DepartamentoRepositori
     @Override
     public Departamento recuperar(Integer id) {
         Departamento encontrado = null;
-
+        String query="SELECT * FROM departamentos WHERE id = ?";
+        String[] selectionArgs = {id.toString()};
+        Cursor c = db.rawQuery(query, selectionArgs);
+        if (c.getCount()>0) {
+            while (c.moveToNext()) {
+                Departamento d = new Departamento(c.getString(1));
+                d.setId(c.getInt(0));
+            }
+        }
+        c.close();
         return encontrado;
     }
 
@@ -68,7 +85,6 @@ public class DepartamentoRepositorioSQLiteImpl implements DepartamentoRepositori
     public ArrayList<Departamento> recuperarTodos() {
         ArrayList<Departamento> lista = new ArrayList<>();
         Cursor c = db.rawQuery("SELECT * FROM departamentos", null);
-
         if (c.getCount()>0) {
             while (c.moveToNext()) {
                 Departamento d = new Departamento(c.getString(1));
