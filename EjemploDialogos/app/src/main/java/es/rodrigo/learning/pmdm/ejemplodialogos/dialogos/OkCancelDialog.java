@@ -6,22 +6,27 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.widget.Toast;
 
-import es.rodrigo.learning.pmdm.ejemplodialogos.R;
-
-public class SimpleInfoOkBtnDialog extends DialogFragment {
+@SuppressLint("ValidFragment")
+public class OkCancelDialog extends DialogFragment {
+    private OnSubmitSimpleListener okListener;
+    private OnSubmitSimpleListener cancelListener;
     private String title;
     private String message;
     private String positiveBtnLabel;
-    private OnSubmitSimpleListener okListener;
+    private String negativeBtnLabel;
 
     @SuppressLint("ValidFragment")
-    public SimpleInfoOkBtnDialog(String title, String message, String positiveBtnLabel, OnSubmitSimpleListener okListener) {
+    public OkCancelDialog(String title, String message,
+                          String positiveBtnLabel, String negativeBtnLabel,
+                          OnSubmitSimpleListener okListener,
+                          OnSubmitSimpleListener cancelListener) {
+        this.okListener = okListener;
+        this.cancelListener = cancelListener;
         this.title = title;
         this.message = message;
         this.positiveBtnLabel = positiveBtnLabel;
-        this.okListener = okListener;
+        this.negativeBtnLabel = negativeBtnLabel;
     }
 
     @Override
@@ -29,15 +34,24 @@ public class SimpleInfoOkBtnDialog extends DialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setMessage(message)
                 .setTitle(title);
-        builder.setCancelable(false);
+        // builder.setCancelable(false);
         builder.setPositiveButton(positiveBtnLabel, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                if (okListener != null) {
+                if (okListener != null ){
                     okListener.submit(null);
                 }
             }
         });
+        builder.setNegativeButton(negativeBtnLabel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                if (cancelListener != null) {
+                    cancelListener.submit(null);
+                }
+            }
+        });
+
         AlertDialog dialog = builder.create();
         return dialog;
     }

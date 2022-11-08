@@ -14,6 +14,9 @@ import java.util.List;
 import es.rodrigo.learning.pmdm.ejemplodialogos.ProyectoApplication;
 import es.rodrigo.learning.pmdm.ejemplodialogos.R;
 import es.rodrigo.learning.pmdm.ejemplodialogos.adaptadores.DepartamentoAdapter;
+import es.rodrigo.learning.pmdm.ejemplodialogos.dialogos.OnSubmitSimpleListener;
+import es.rodrigo.learning.pmdm.ejemplodialogos.dialogos.SimpleInfoOkBtnDialog;
+import es.rodrigo.learning.pmdm.ejemplodialogos.dialogos.OkCancelDialog;
 import es.rodrigo.learning.pmdm.ejemplodialogos.modelos.Departamento;
 import es.rodrigo.learning.pmdm.ejemplodialogos.repositorios.DepartamentoRepositorio;
 import es.rodrigo.learning.pmdm.ejemplodialogos.util.Utilidades;
@@ -91,14 +94,46 @@ public class DepartamentosActivity extends Activity {
     }
 
     public void borrarDepto(View view) {
-        indiceDepartamento = adaptadorDeptos.getAdapterItemPosition(view);
-        if (indiceDepartamento != -1 && adaptadorDeptos.getCount() > 0) {
-            Departamento d = lista.get(indiceDepartamento);
-            departamentoRepositorio.eliminar(d);
-            lista = departamentoRepositorio.recuperarTodos();
-            adaptadorDeptos.setListDepartamentos(lista);
-            adaptadorDeptos.notifyDataSetChanged();
-        }
+        OkCancelDialog dialog = new OkCancelDialog("Borrar departamento", "¿Estás seguro de borrar el departamento?",
+                "Aceptar", "Cancelar",
+                new OnSubmitSimpleListener() {
+                    @Override
+                    public void submit(Object result) {
+                        // positive listener
+                        indiceDepartamento = adaptadorDeptos.getAdapterItemPosition(view);
+                        if (indiceDepartamento != -1 && adaptadorDeptos.getCount() > 0) {
+                            Departamento d = lista.get(indiceDepartamento);
+                            departamentoRepositorio.eliminar(d);
+                            SimpleInfoOkBtnDialog info = new SimpleInfoOkBtnDialog("Depto borrado",
+                                    "Se ha borrado el departamento", "Aceptar",
+                                    new OnSubmitSimpleListener() {
+                                        @Override
+                                        public void submit(Object result) {
+                                            // no se recarga la lista hasta que se pulsa aceptar
+                                            lista = departamentoRepositorio.recuperarTodos();
+                                            adaptadorDeptos.setListDepartamentos(lista);
+                                            adaptadorDeptos.notifyDataSetChanged();
+                                        }
+                                    });
+                            info.show(getFragmentManager(), "deptoborrado");
+                        }
+                    }
+                },
+                new OnSubmitSimpleListener() {
+                    @Override
+                    public void submit(Object result) {
+                        // negative listener
+                        SimpleInfoOkBtnDialog info = new SimpleInfoOkBtnDialog("Depto borrado cancelado",
+                                "Finalmente no se ha borrado el departamento", "Aceptar",
+                                new OnSubmitSimpleListener() {
+                                    @Override
+                                    public void submit(Object result) {
+                                    }
+                                });
+                        info.show(getFragmentManager(), "deptoborrado");
+                    }
+                });
+        dialog.show(getFragmentManager(), "Etiqueta dialogo");
     }
 
 }
