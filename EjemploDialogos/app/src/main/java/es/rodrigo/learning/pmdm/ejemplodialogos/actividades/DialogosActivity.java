@@ -6,8 +6,8 @@ import android.view.View;
 import android.widget.Button;
 
 import es.rodrigo.learning.pmdm.ejemplodialogos.R;
-import es.rodrigo.learning.pmdm.ejemplodialogos.dialogs.SimpleInfoDialog;
-import es.rodrigo.learning.pmdm.ejemplodialogos.dialogs.SimpleInfoOkBtnDialog;
+import es.rodrigo.learning.pmdm.ejemplodialogos.dialogos.SimpleInfoDialog;
+import es.rodrigo.learning.pmdm.ejemplodialogos.dialogos.SimpleInfoOkBtnDialog;
 
 public class DialogosActivity extends Activity {
     private Button btnSimpleInfo;
