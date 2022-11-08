@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/recuadro_list_item" >
+
+    <TextView
+        android:id="@+id/tvDeptoEditar"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:padding="5dp"
+        android:gravity="center_vertical"
+        android:drawableStart="@android:drawable/ic_menu_edit"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:onClick="editarDepto"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/tvDeptoEliminar"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:padding="5dp"
+        android:onClick="borrarDepto"
+        android:gravity="center_vertical"
+        android:drawableStart="@android:drawable/ic_menu_delete"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/tvIdDepto"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="@string/iddepto"
+        android:gravity="center_vertical"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/tvNombreDepto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:padding="5dp"
+        android:gravity="center_vertical"
+        android:text="@string/nombredepto"
+        android:textColor="@color/black"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</LinearLayout>

@@ -4,4 +4,7 @@
     <string name="msg">Pulsa sobre el botón para probar los diferentes diálogos</string>
     <string name="simpleinfotitle">Título</string>
     <string name="simpleinfomsg">Este es el mensaje que quieres que se vea dentro de la alerta.</string>
+    <string name="campo_obligatorio">Campo obligatorio</string>
+    <string name="iddepto">Id Depto</string>
+    <string name="nombredepto">Nombre Depto</string>
 </resources>
