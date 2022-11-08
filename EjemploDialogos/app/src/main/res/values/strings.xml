@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">EjemploDialogos</string>
+    <string name="simple_info">Simple Info</string>
+    <string name="msg">Pulsa sobre el botón para probar los diferentes diálogos</string>
+    <string name="simpleinfotitle">Título</string>
+    <string name="simpleinfomsg">Este es el mensaje que quieres que se vea dentro de la alerta.</string>
 </resources>
