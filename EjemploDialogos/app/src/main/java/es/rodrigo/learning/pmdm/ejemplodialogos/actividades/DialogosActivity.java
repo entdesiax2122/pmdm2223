@@ -1,6 +1,7 @@
 package es.rodrigo.learning.pmdm.ejemplodialogos.actividades;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,7 @@ import es.rodrigo.learning.pmdm.ejemplodialogos.dialogos.SimpleInfoOkBtnDialog;
 public class DialogosActivity extends Activity {
     private Button btnSimpleInfo;
     private Button btnSimpleInfoOkBtn;
+    private Button btnOkCancelDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,7 @@ public class DialogosActivity extends Activity {
         // bindear componentes
         btnSimpleInfo = findViewById(R.id.btnSimpleInfo);
         btnSimpleInfoOkBtn = findViewById(R.id.btnSimpleInfoOkBtn);
+        btnOkCancelDialog = findViewById(R.id.btnOkCancelDialog);
 
         btnSimpleInfo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,7 +40,15 @@ public class DialogosActivity extends Activity {
                 siobd.show(getFragmentManager(), "Mi dialogo simple con botón aceptar");
             }
         });
+
+        btnOkCancelDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Creamos el Intent
+                Intent intent = new Intent(DialogosActivity.this, DepartamentosActivity.class);
+                //Iniciamos la nueva actividad
+                startActivity(intent);
+            }
+        });
     }
-
-
 }

@@ -2,7 +2,8 @@ package es.rodrigo.learning.pmdm.ejemplodialogos.repositorios;
 
 import java.util.ArrayList;
 
-import es.rodrigo.learning.pmdm.ejbbddyapplication.modelos.Departamento;
+import es.rodrigo.learning.pmdm.ejemplodialogos.modelos.Departamento;
+
 
 public class DepartamentoRepositorioListImpl implements DepartamentoRepositorio {
     private ArrayList<Departamento> lista;
