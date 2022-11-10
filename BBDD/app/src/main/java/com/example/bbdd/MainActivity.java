@@ -53,9 +53,9 @@ public class MainActivity extends AppCompatActivity {
         //db.execSQL("DROP DATABASE MisDiscos");
         db=openOrCreateDatabase("MisDiscos", Context.MODE_PRIVATE, null);
         db.execSQL("CREATE TABLE IF NOT EXISTS misDiscos(Grupo VARCHAR, Disco Varchar);");
-        db.execSQL("DELETE FROM misDiscos");
-        db.execSQL("INSERT INTO misDiscos VALUES ('SA','Ratas');");
-        db.execSQL("INSERT INTO misDiscos VALUES ('Reincidente','Algazara');");
+//        db.execSQL("DELETE FROM misDiscos");
+//        db.execSQL("INSERT INTO misDiscos VALUES ('SA','Ratas');");
+//        db.execSQL("INSERT INTO misDiscos VALUES ('Reincidente','Algazara');");
         Listar();
     }
 

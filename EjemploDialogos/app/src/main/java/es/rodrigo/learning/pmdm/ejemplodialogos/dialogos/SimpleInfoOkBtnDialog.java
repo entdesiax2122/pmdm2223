@@ -32,6 +32,7 @@ public class SimpleInfoOkBtnDialog extends DialogFragment {
         builder.setPositiveButton(positiveBtnLabel, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                // código a ejecutar si pulsas OK
                 if (okListener != null) {
                     okListener.submit(null);
                 }

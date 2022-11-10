@@ -28,7 +28,8 @@ public class DialogosActivity extends Activity {
         btnSimpleInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SimpleInfoDialog sid = new SimpleInfoDialog("Título ejemplo","Mensaje de ejemplo que se muestra dentro del diálogo");
+                SimpleInfoDialog sid = new SimpleInfoDialog();
+                sid.setConfiguration("Título ejemplo","Mensaje de ejemplo que se muestra dentro del diálogo");
                 sid.show(getFragmentManager(),"Mi diálogo simple");
             }
         });

@@ -8,13 +8,11 @@ import android.os.Bundle;
 
 import es.rodrigo.learning.pmdm.ejemplodialogos.R;
 
-@SuppressLint("ValidFragment")
 public class SimpleInfoDialog extends DialogFragment {
     private String title;
     private String message;
 
-    @SuppressLint("ValidFragment")
-    public SimpleInfoDialog(String title, String message) {
+    public void setConfiguration(String title, String message) {
         this.title = title;
         this.message = message;
     }

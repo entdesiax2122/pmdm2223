@@ -8,6 +8,26 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="Nuevo" />
+    <EditText
+        android:id="@+id/etNuevo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:inputType="text"
+        android:hint="Introduce un valor"/>
+    <Button
+        android:id="@+id/btNuevo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="añadir"
+        android:textSize="20sp"/>
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"

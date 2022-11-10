@@ -3,10 +3,14 @@ package com.example.pr_spinner;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,16 +26,18 @@ public class MainActivity extends AppCompatActivity {
         spOpciones = (Spinner)findViewById(R.id.spOpciones);
 
         //Alternativa 2: Recurso XML de tipo string-array
-        ArrayAdapter<CharSequence> adaptador =
-                ArrayAdapter.createFromResource(this,
-                        R.array.valores_array, android.R.layout.simple_spinner_item);
-        adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spOpciones.setAdapter(adaptador);
+//        ArrayAdapter<CharSequence> adaptador =
+//                ArrayAdapter.createFromResource(this,
+//                        R.array.valores_array, android.R.layout.simple_spinner_item);
+//        adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spOpciones.setAdapter(adaptador);
 
         // Alternativa 1: Array java
-//        String[] datos = new String[]{"Elem1","Elem2","Elem3","Elem4","Elem5"};
-//        ArrayAdapter<String> adaptador =
-//                new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos);
+        String[] datos = new String[]{"Elem1","Elem2","Elem3","Elem4","Elem5"};
+
+        ArrayAdapter<String> adaptador =
+                new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos);
+        spOpciones.setAdapter(adaptador);
 
         spOpciones.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parent,

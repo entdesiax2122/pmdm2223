@@ -73,8 +73,8 @@ public class DepartamentoRepositorioSQLiteImpl implements DepartamentoRepositori
         Cursor c = db.rawQuery(query, selectionArgs);
         if (c.getCount()>0) {
             while (c.moveToNext()) {
-                Departamento d = new Departamento(c.getString(1));
-                d.setId(c.getInt(0));
+                encontrado = new Departamento(c.getString(1));
+                encontrado.setId(c.getInt(0));
             }
         }
         c.close();
