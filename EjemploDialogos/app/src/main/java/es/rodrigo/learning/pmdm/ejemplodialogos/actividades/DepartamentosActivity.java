@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.List;
 
 import es.rodrigo.learning.pmdm.ejemplodialogos.ProyectoApplication;
@@ -21,7 +23,7 @@ import es.rodrigo.learning.pmdm.ejemplodialogos.modelos.Departamento;
 import es.rodrigo.learning.pmdm.ejemplodialogos.repositorios.DepartamentoRepositorio;
 import es.rodrigo.learning.pmdm.ejemplodialogos.util.Utilidades;
 
-public class DepartamentosActivity extends Activity {
+public class DepartamentosActivity extends AppCompatActivity {
     private DepartamentoRepositorio departamentoRepositorio;
     private Button btNuevoDepto;
     private EditText etNombre;
@@ -54,7 +56,12 @@ public class DepartamentosActivity extends Activity {
         // cargamos la lista de departamentos
         lista = departamentoRepositorio.recuperarTodos();
         // creamos el Adaptador personalizado y se lo añadimos al ListView
-        adaptadorDeptos = new DepartamentoAdapter(getBaseContext(), lista);
+        adaptadorDeptos = new DepartamentoAdapter(getBaseContext(), lista, new OnSubmitSimpleListener() {
+            @Override
+            public void submit(Object obj) {
+                borrarDepto((View) obj);
+            }
+        });
         lvDeptos.setAdapter(adaptadorDeptos);
 
         // programamos el AdapterView.OnItemClickListener
@@ -94,7 +101,8 @@ public class DepartamentosActivity extends Activity {
     }
 
     public void borrarDepto(View view) {
-        OkCancelDialog dialog = new OkCancelDialog("Borrar departamento", "¿Estás seguro de borrar el departamento?",
+        OkCancelDialog dialog = new OkCancelDialog();
+        dialog.setConfiguration("Borrar departamento", "¿Estás seguro de borrar el departamento?",
                 "Aceptar", "Cancelar",
                 new OnSubmitSimpleListener() {
                     @Override
@@ -104,7 +112,8 @@ public class DepartamentosActivity extends Activity {
                         if (indiceDepartamento != -1 && adaptadorDeptos.getCount() > 0) {
                             Departamento d = lista.get(indiceDepartamento);
                             departamentoRepositorio.eliminar(d);
-                            SimpleInfoOkBtnDialog info = new SimpleInfoOkBtnDialog("Depto borrado",
+                            SimpleInfoOkBtnDialog info = new SimpleInfoOkBtnDialog();
+                            info.setConfiguration("Depto borrado",
                                     "Se ha borrado el departamento", "Aceptar",
                                     new OnSubmitSimpleListener() {
                                         @Override
@@ -123,7 +132,8 @@ public class DepartamentosActivity extends Activity {
                     @Override
                     public void submit(Object result) {
                         // negative listener
-                        SimpleInfoOkBtnDialog info = new SimpleInfoOkBtnDialog("Depto borrado cancelado",
+                        SimpleInfoOkBtnDialog info = new SimpleInfoOkBtnDialog();
+                        info.setConfiguration("Depto borrado cancelado",
                                 "Finalmente no se ha borrado el departamento", "Aceptar",
                                 new OnSubmitSimpleListener() {
                                     @Override

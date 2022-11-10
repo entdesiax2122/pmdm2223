@@ -36,7 +36,8 @@ public class DialogosActivity extends Activity {
         btnSimpleInfoOkBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SimpleInfoOkBtnDialog siobd = new SimpleInfoOkBtnDialog("Título", "Mensaje", "Ok", null);
+                SimpleInfoOkBtnDialog siobd = new SimpleInfoOkBtnDialog();
+                siobd.setConfiguration("Título", "Mensaje", "Ok", null);
                 siobd.show(getFragmentManager(), "Mi dialogo simple con botón aceptar");
             }
         });

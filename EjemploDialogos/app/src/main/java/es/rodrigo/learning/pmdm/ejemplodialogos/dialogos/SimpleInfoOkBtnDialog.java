@@ -16,8 +16,7 @@ public class SimpleInfoOkBtnDialog extends DialogFragment {
     private String positiveBtnLabel;
     private OnSubmitSimpleListener okListener;
 
-    @SuppressLint("ValidFragment")
-    public SimpleInfoOkBtnDialog(String title, String message, String positiveBtnLabel, OnSubmitSimpleListener okListener) {
+    public void setConfiguration(String title, String message, String positiveBtnLabel, OnSubmitSimpleListener okListener) {
         this.title = title;
         this.message = message;
         this.positiveBtnLabel = positiveBtnLabel;

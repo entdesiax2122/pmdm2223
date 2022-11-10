@@ -7,7 +7,6 @@ import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
 
-@SuppressLint("ValidFragment")
 public class OkCancelDialog extends DialogFragment {
     private OnSubmitSimpleListener okListener;
     private OnSubmitSimpleListener cancelListener;
@@ -16,8 +15,7 @@ public class OkCancelDialog extends DialogFragment {
     private String positiveBtnLabel;
     private String negativeBtnLabel;
 
-    @SuppressLint("ValidFragment")
-    public OkCancelDialog(String title, String message,
+    public void setConfiguration(String title, String message,
                           String positiveBtnLabel, String negativeBtnLabel,
                           OnSubmitSimpleListener okListener,
                           OnSubmitSimpleListener cancelListener) {
