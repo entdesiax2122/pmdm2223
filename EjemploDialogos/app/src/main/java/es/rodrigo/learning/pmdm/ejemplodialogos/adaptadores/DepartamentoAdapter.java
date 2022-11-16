@@ -24,17 +24,20 @@ public class DepartamentoAdapter extends BaseAdapter {
     private List<Departamento> listDepartamentos;
     private Context context;
     private OnSubmitSimpleListener onclickBorrarDepto;
+    private OnSubmitSimpleListener onclickEditarDepto;
 
     public void setListDepartamentos(List<Departamento> listDepartamentos) {
         this.listDepartamentos = listDepartamentos;
     }
 
     public DepartamentoAdapter(Context context, List<Departamento> customizedList,
-                               OnSubmitSimpleListener onclickBorrarDepto) {
+                               OnSubmitSimpleListener onclickBorrarDepto,
+                               OnSubmitSimpleListener onclickEditarDepto) {
         this.context = context;
         layoutinflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         listDepartamentos = customizedList;
         this.onclickBorrarDepto = onclickBorrarDepto;
+        this.onclickEditarDepto = onclickEditarDepto;
     }
 
     @Override
@@ -72,6 +75,7 @@ public class DepartamentoAdapter extends BaseAdapter {
             listViewHolder = new DepartamentoViewHolder();
             convertView = layoutinflater.inflate(R.layout.departamento_list_item, parent, false);
             numFilas++;
+            // Listener para borrar departamento
             listViewHolder.tvBorrarDepto = (TextView) convertView.findViewById(R.id.tvDeptoEliminar);
             listViewHolder.tvBorrarDepto.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -79,6 +83,15 @@ public class DepartamentoAdapter extends BaseAdapter {
                     onclickBorrarDepto.submit(view);
                 }
             });
+            // Listener para editar departamento
+            listViewHolder.tvEditarDepto = (TextView) convertView.findViewById(R.id.tvDeptoEditar);
+            listViewHolder.tvEditarDepto.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onclickEditarDepto.submit(view);
+                }
+            });
+
             listViewHolder.tvIdDepto = (TextView) convertView.findViewById(R.id.tvIdDepto);
             listViewHolder.tvNombreDepto = (TextView) convertView.findViewById(R.id.tvNombreDepto);
             listViewHolder.position = position;
@@ -97,6 +110,7 @@ public class DepartamentoAdapter extends BaseAdapter {
         TextView tvIdDepto;
         TextView tvNombreDepto;
         TextView tvBorrarDepto;
+        TextView tvEditarDepto;
         int position;
     }
 }

@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -62,6 +63,11 @@ public class DepartamentosActivity extends AppCompatActivity {
             public void submit(Object obj) {
                 borrarDepto((View) obj);
             }
+        }, new OnSubmitSimpleListener() {
+            @Override
+            public void submit(Object obj) {
+                editarDepto((View) obj);
+            }
         });
         lvDeptos.setAdapter(adaptadorDeptos);
 
@@ -107,12 +113,17 @@ public class DepartamentosActivity extends AppCompatActivity {
                     new OnSubmitSimpleListener() {
                         @Override
                         public void submit(Object result) {
-
+                            d.setNombre((String) result);
+                            departamentoRepositorio.guardar(d);
+                            lista = departamentoRepositorio.recuperarTodos();
+                            adaptadorDeptos.setListDepartamentos(lista);
+                            adaptadorDeptos.notifyDataSetChanged();
+                            Toast.makeText(DepartamentosActivity.this, "Departamento actualizado ...", Toast.LENGTH_SHORT).show();
                         }
                     },
                     null
                     );
-
+            dialog.show(getFragmentManager(), "dialogoEditarDepto");
         }
     }
 
