@@ -16,6 +16,7 @@ import java.util.List;
 import es.rodrigo.learning.pmdm.ejemplodialogos.ProyectoApplication;
 import es.rodrigo.learning.pmdm.ejemplodialogos.R;
 import es.rodrigo.learning.pmdm.ejemplodialogos.adaptadores.DepartamentoAdapter;
+import es.rodrigo.learning.pmdm.ejemplodialogos.dialogos.InputBoxDialog;
 import es.rodrigo.learning.pmdm.ejemplodialogos.dialogos.OnSubmitSimpleListener;
 import es.rodrigo.learning.pmdm.ejemplodialogos.dialogos.SimpleInfoOkBtnDialog;
 import es.rodrigo.learning.pmdm.ejemplodialogos.dialogos.OkCancelDialog;
@@ -97,7 +98,22 @@ public class DepartamentosActivity extends AppCompatActivity {
     }
 
     public void editarDepto(View view) {
+        indiceDepartamento = adaptadorDeptos.getAdapterItemPosition(view);
+        if (indiceDepartamento != -1 && adaptadorDeptos.getCount() > 0) {
+            Departamento d = lista.get(indiceDepartamento);
+            InputBoxDialog dialog = new InputBoxDialog();
+            dialog.setConfiguration(d.getNombre(), "Introduzca el nuevo nombre para el departamento",
+                    "Aceptar", "Cancelar",
+                    new OnSubmitSimpleListener() {
+                        @Override
+                        public void submit(Object result) {
 
+                        }
+                    },
+                    null
+                    );
+
+        }
     }
 
     public void borrarDepto(View view) {
