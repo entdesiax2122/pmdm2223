@@ -1,7 +1,8 @@
 package es.rodrigo.learning.pmdm.ejemplodialogos.actividades;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -35,11 +36,52 @@ public class DepartamentosActivity extends AppCompatActivity {
     private View oldViewGround;
     private int indiceDepartamento = -1;
 
+    // Inicio métodos necesarios para manejar NavigateUp y OptionsMenu.
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_general, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.sobrenosotros:
+                SimpleInfoOkBtnDialog dialog = new SimpleInfoOkBtnDialog();
+                dialog.setConfiguration("IAX Sobre nosotros", "Esta es la App para la gestión de actividades extraescolares en el IES Alfonso X el Sabio de Murcia. 2022-2023 Todos los derechos reservados",
+                        "Aceptar", null);
+                dialog.show(getFragmentManager(), "dialogo_sobre_nosotros");
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    // Fin crear menú de opciones
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_departamentos);
+
+        // Ini ActionBar
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.iax_logo);
+        getSupportActionBar().setTitle(getString(R.string.iax_title));
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        // Fin ActionBar
+
 
         departamentoRepositorio =
                 ProyectoApplication.getDepartamentoRepositorio();

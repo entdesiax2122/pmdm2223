@@ -9,4 +9,6 @@
     <string name="nombredepto">Nombre Depto</string>
     <string name="ok_cancel_dialog">OK CANCEL DIALOG</string>
     <string name="simple_info_ok_btn">Simple info ok btn</string>
+    <string name="iax_title">IAX</string>
+    <string name="menu_item_aboutus">Sobre nosotros</string>
 </resources>
