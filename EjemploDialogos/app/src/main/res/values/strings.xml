@@ -11,4 +11,9 @@
     <string name="simple_info_ok_btn">Simple info ok btn</string>
     <string name="iax_title">IAX</string>
     <string name="menu_item_aboutus">Sobre nosotros</string>
+    <string name="action_settings">Preferencias</string>
+    <string name="add">Añadir</string>
+    <string name="search">Buscar</string>
+    <string name="edit">Editar</string>
+    <string name="delete">Borrar</string>
 </resources>

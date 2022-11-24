@@ -81,6 +81,7 @@ public class DepartamentosActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(getString(R.string.iax_title));
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         // Fin ActionBar
+        
 
 
         departamentoRepositorio =
