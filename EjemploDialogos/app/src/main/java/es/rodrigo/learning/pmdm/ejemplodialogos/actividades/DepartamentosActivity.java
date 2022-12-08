@@ -64,7 +64,6 @@ public class DepartamentosActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
     // Fin crear menú de opciones
 
     @Override

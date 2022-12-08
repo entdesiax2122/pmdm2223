@@ -21,6 +21,13 @@ public class DialogosActivity extends AppCompatActivity {
     private Button btnSimpleInfoOkBtn;
     private Button btnOkCancelDialog;
 
+    // Inicio métodos necesarios para manejar NavigateUp y OptionsMenu.
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_especial, menu);
@@ -49,6 +56,8 @@ public class DialogosActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+    // Fin crear menú de opciones
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
