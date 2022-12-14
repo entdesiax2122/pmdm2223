@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import es.rodrigo.learning.pmdm.ejemplodialogos.ProyectoApplication;
@@ -98,7 +99,14 @@ public class DepartamentosActivity extends AppCompatActivity {
             lvDeptos.addHeaderView(header);
         }
         // cargamos la lista de departamentos
-        lista = departamentoRepositorio.recuperarTodos();
+        if (getIntent().getExtras() != null) {
+            int deptoId = getIntent().getExtras().getInt("deptoId");
+            Departamento d = departamentoRepositorio.recuperar(deptoId);
+            lista = new ArrayList<>();
+            lista.add(d);
+        } else {
+            lista = departamentoRepositorio.recuperarTodos();
+        }
         // creamos el Adaptador personalizado y se lo añadimos al ListView
         adaptadorDeptos = new DepartamentoAdapter(getBaseContext(), lista, new OnSubmitSimpleListener() {
             @Override

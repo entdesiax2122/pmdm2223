@@ -38,4 +38,24 @@
         android:layout_margin="10dp"
         android:text="@string/ok_cancel_dialog"
         android:textSize="20sp" />
+
+    <Spinner
+        android:id="@+id/spDeptos"
+        android:layout_width="300dp"
+        android:layout_height="80dp" />
+
+    <Button
+        android:id="@+id/btSelecDepto"
+        android:text="Cargar"
+        android:textSize="24sp"
+        android:layout_width="300dp"
+        android:layout_height="60dp" />
+
+    <TextView
+        android:id="@+id/tvInfoDepto"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:text="prueba"
+        android:textSize="26sp"/>
+
 </LinearLayout>

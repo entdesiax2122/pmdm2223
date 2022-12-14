@@ -8,18 +8,31 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.w3c.dom.Text;
+
+import java.util.List;
+
+import es.rodrigo.learning.pmdm.ejemplodialogos.ProyectoApplication;
 import es.rodrigo.learning.pmdm.ejemplodialogos.R;
 import es.rodrigo.learning.pmdm.ejemplodialogos.dialogos.SimpleInfoDialog;
 import es.rodrigo.learning.pmdm.ejemplodialogos.dialogos.SimpleInfoOkBtnDialog;
+import es.rodrigo.learning.pmdm.ejemplodialogos.modelos.Departamento;
+import es.rodrigo.learning.pmdm.ejemplodialogos.util.Utilidades;
 
 public class DialogosActivity extends AppCompatActivity {
     private Button btnSimpleInfo;
     private Button btnSimpleInfoOkBtn;
     private Button btnOkCancelDialog;
+    private Spinner spDeptos;
+    private TextView tvInfoDepto;
+    private Button btSelecDepto;
+    private List<Departamento> listDeptos;
 
     // Inicio métodos necesarios para manejar NavigateUp y OptionsMenu.
     @Override
@@ -78,6 +91,9 @@ public class DialogosActivity extends AppCompatActivity {
         btnSimpleInfo = findViewById(R.id.btnSimpleInfo);
         btnSimpleInfoOkBtn = findViewById(R.id.btnSimpleInfoOkBtn);
         btnOkCancelDialog = findViewById(R.id.btnOkCancelDialog);
+        tvInfoDepto = findViewById(R.id.tvInfoDepto);
+        spDeptos = findViewById(R.id.spDeptos);
+        btSelecDepto = findViewById(R.id.btSelecDepto);
 
         btnSimpleInfo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,5 +122,37 @@ public class DialogosActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btSelecDepto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int indiceDepto = spDeptos.getSelectedItemPosition();
+                if (indiceDepto > 0) {
+                    Departamento depSeleccionado = listDeptos.get(indiceDepto - 1);
+                    tvInfoDepto.setText(depSeleccionado.getNombre());
+
+                    //Creamos el Intent
+                    Intent intent = new Intent(DialogosActivity.this, DepartamentosActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("deptoId", depSeleccionado.getId());
+                    intent.putExtras(bundle);
+                    //Iniciamos la nueva actividad
+                    startActivity(intent);
+
+                }
+            }
+        });
+
+        // inicializar spinner
+        listDeptos = ProyectoApplication.getDepartamentoRepositorio().recuperarTodos();
+        Utilidades.inicializarSpinner(spDeptos, listDeptos, "-- Elige un departamento --", getBaseContext());
+    }
+
+    @Override
+    protected void onResume() {
+        // inicializar spinner
+        super.onResume();
+        listDeptos = ProyectoApplication.getDepartamentoRepositorio().recuperarTodos();
+        Utilidades.inicializarSpinner(spDeptos, listDeptos, "-- Elige un departamento --", getBaseContext());
     }
 }
