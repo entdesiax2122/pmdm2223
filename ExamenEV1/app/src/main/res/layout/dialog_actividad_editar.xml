@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@color/teal_700"
+        android:textAlignment="center"
+        android:text=""
+        android:textSize="25sp"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/tvIdActividad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_grey"
+        android:textAlignment="center"
+        android:text="Id de la Actividad"
+        android:textSize="25sp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginLeft="4dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="Título de la actividad"/>
+
+    <EditText
+        android:id="@+id/etDialogTituloAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_marginRight="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginBottom="16dp"
+        android:hint="Título de la actividad"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginLeft="4dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="Lugar de la actividad"/>
+
+    <EditText
+        android:id="@+id/etDialogLugarAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_marginRight="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginBottom="16dp"
+        android:hint="Lugar de la actividad"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginLeft="4dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="Departamento organizador"/>
+
+    <Spinner
+        android:id="@+id/spDialogDeptoAct"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginBottom="16dp" />
+
+</LinearLayout>

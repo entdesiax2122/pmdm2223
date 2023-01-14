@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/recuadro_list_item" >
+
+    <TextView
+        android:id="@+id/tvIdActividad"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="@string/id"
+        android:gravity="center_vertical"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/tvDeptoActividad"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:gravity="center_vertical"
+        android:text="@string/depto"
+        android:textColor="@color/black"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/tvLugarActividad"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:gravity="center_vertical"
+        android:text="@string/lugar"
+        android:textColor="@color/black"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/tvTituloActividad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:gravity="center_vertical"
+        android:text="@string/tituloact"
+        android:textColor="@color/black"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</LinearLayout>

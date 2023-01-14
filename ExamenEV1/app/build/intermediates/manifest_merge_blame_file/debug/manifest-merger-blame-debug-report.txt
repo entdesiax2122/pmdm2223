@@ -1,0 +1,98 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.dam.android"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="27"
+8-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="32" />
+9-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml:5:5-67
+11-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml:5:22-64
+12
+13    <application
+13-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml:7:5-36:19
+14        android:name="com.dam.android.ProyectoApplication"
+14-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml:8:9-44
+15        android:allowBackup="true"
+15-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml:10:9-35
+16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+16-->[androidx.core:core:1.8.0] /home/rodrigo/.gradle/caches/transforms-3/0638d9dacb5fd10604e28ec2b4d3c80b/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
+17        android:dataExtractionRules="@xml/data_extraction_rules"
+17-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml:11:9-65
+18        android:debuggable="true"
+19        android:extractNativeLibs="false"
+20        android:fullBackupContent="@xml/backup_rules"
+20-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml:12:9-54
+21        android:icon="@drawable/iax_logo"
+21-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml:13:9-42
+22        android:label="@string/app_name"
+22-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml:14:9-41
+23        android:roundIcon="@mipmap/ic_launcher_round"
+23-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml:15:9-54
+24        android:supportsRtl="true"
+24-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml:16:9-35
+25        android:testOnly="true"
+26        android:theme="@style/Theme.ExamenEV1"
+26-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml:17:9-47
+27        android:usesCleartextTraffic="true" >
+27-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml:9:9-44
+28        <activity
+28-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml:19:9-27:20
+29            android:name="com.dam.android.actividades.LoginActivity"
+29-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml:20:13-54
+30            android:exported="true" >
+30-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml:21:13-36
+31            <intent-filter>
+31-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml:22:13-26:29
+32                <action android:name="android.intent.action.MAIN" />
+32-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml:23:17-69
+32-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml:23:25-66
+33
+34                <category android:name="android.intent.category.LAUNCHER" />
+34-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml:25:17-77
+34-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml:25:27-74
+35            </intent-filter>
+36        </activity>
+37        <activity
+37-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml:29:9-31:40
+38            android:name="com.dam.android.actividades.DepartamentosActivity"
+38-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml:30:13-62
+39            android:exported="false" />
+39-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml:31:13-37
+40        <activity
+40-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml:32:9-35:20
+41            android:name="com.dam.android.actividades.MenuActivity"
+41-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml:33:13-53
+42            android:exported="false" >
+42-->/home/rodrigo/AndroidStudioProjects/pmdm2223/ExamenEV1/app/src/main/AndroidManifest.xml:34:13-37
+43        </activity>
+44
+45        <provider
+45-->[androidx.emoji2:emoji2:1.2.0] /home/rodrigo/.gradle/caches/transforms-3/9f99c19470d8bf18ee15270d078c3173/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+46            android:name="androidx.startup.InitializationProvider"
+46-->[androidx.emoji2:emoji2:1.2.0] /home/rodrigo/.gradle/caches/transforms-3/9f99c19470d8bf18ee15270d078c3173/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+47            android:authorities="com.dam.android.androidx-startup"
+47-->[androidx.emoji2:emoji2:1.2.0] /home/rodrigo/.gradle/caches/transforms-3/9f99c19470d8bf18ee15270d078c3173/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+48            android:exported="false" >
+48-->[androidx.emoji2:emoji2:1.2.0] /home/rodrigo/.gradle/caches/transforms-3/9f99c19470d8bf18ee15270d078c3173/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+49            <meta-data
+49-->[androidx.emoji2:emoji2:1.2.0] /home/rodrigo/.gradle/caches/transforms-3/9f99c19470d8bf18ee15270d078c3173/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+50                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+50-->[androidx.emoji2:emoji2:1.2.0] /home/rodrigo/.gradle/caches/transforms-3/9f99c19470d8bf18ee15270d078c3173/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+51                android:value="androidx.startup" />
+51-->[androidx.emoji2:emoji2:1.2.0] /home/rodrigo/.gradle/caches/transforms-3/9f99c19470d8bf18ee15270d078c3173/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+52            <meta-data
+52-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/rodrigo/.gradle/caches/transforms-3/a68586d9ac6fc4872d4884a947d1c1d5/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+53                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+53-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/rodrigo/.gradle/caches/transforms-3/a68586d9ac6fc4872d4884a947d1c1d5/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+54                android:value="androidx.startup" />
+54-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/rodrigo/.gradle/caches/transforms-3/a68586d9ac6fc4872d4884a947d1c1d5/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+55        </provider>
+56    </application>
+57
+58</manifest>

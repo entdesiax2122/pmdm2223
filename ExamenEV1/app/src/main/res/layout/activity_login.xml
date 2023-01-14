@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".actividades.LoginActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="User">
+
+    </TextView>
+    <EditText
+        android:id="@+id/etUs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:hint="email"
+        android:textSize="30sp"
+        ></EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="Password">
+
+    </TextView>
+    <EditText
+        android:id="@+id/etPw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:hint="password"
+        android:textSize="30sp"
+        ></EditText>
+
+    <Button android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="Login"></Button>
+
+    <ProgressBar
+        android:id="@+id/pbLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"></ProgressBar>
+
+    <TextView
+        android:id="@+id/tvToken"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="resultado">
+    </TextView>
+
+</LinearLayout>

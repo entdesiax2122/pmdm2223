@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="amber">#fff8e1</color>
+    <color name="black">#FF000000</color>
+    <color name="dark_grey">#514F4F</color>
+    <color name="light_grey">#D5D2D2</color>
+    <color name="md_statusbar_translucent">#4000</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="action_settings">Preferencias</string>
+    <string name="add">Añadir</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="app_name">ExamenEV1</string>
+    <string name="campo_obligatorio">Campo obligatorio</string>
+    <string name="campoobligatorio">(*) Campo obligatorio</string>
+    <string name="delete">Borrar</string>
+    <string name="depto">Departamento</string>
+    <string name="edit">Editar</string>
+    <string name="email">Email</string>
+    <string name="iax_title">IAX</string>
+    <string name="id">Id</string>
+    <string name="iddepto">Id Depto</string>
+    <string name="listado_deptos">DEPARTAMENTOS</string>
+    <string name="lugar">Lugar</string>
+    <string name="menu_item_aboutus">Sobre nosotros</string>
+    <string name="msg">Evamen EV1 - Menú principal de la aplicación</string>
+    <string name="nombre">Nombre</string>
+    <string name="nombredepto">Nombre Depto</string>
+    <string name="ok_cancel_dialog">OK CANCEL DIALOG</string>
+    <string name="search">Buscar</string>
+    <string name="simple_info">Simple Info</string>
+    <string name="simple_info_ok_btn">Simple info ok btn</string>
+    <string name="simpleinfomsg">Este es el mensaje que quieres que se vea dentro de la alerta.</string>
+    <string name="simpleinfotitle">Título</string>
+    <string name="tituloact">Título actividad</string>
+    <style name="Theme.ExamenEV1" parent="Theme.AppCompat.Light.DarkActionBar">
+        
+
+
+
+
+
+
+
+
+
+        
+    </style>
+</resources>
