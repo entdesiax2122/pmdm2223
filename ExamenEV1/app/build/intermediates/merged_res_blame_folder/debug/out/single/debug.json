@@ -1,182 +1,186 @@
 [
     {
-        "merged": "com.dam.android.app-merged_res-29:/menu_menu_especial.xml.flat",
-        "source": "com.dam.android.app-main-31:/menu/menu_especial.xml"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/layout_dialog_actividad_editar.xml.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/layout/dialog_actividad_editar.xml"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/drawable-v24_speedbtn100selected.png.flat",
-        "source": "com.dam.android.app-main-31:/drawable-v24/speedbtn100selected.png"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/layout_actividad_list_item.xml.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/layout/actividad_list_item.xml"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/xml_backup_rules.xml.flat",
-        "source": "com.dam.android.app-main-31:/xml/backup_rules.xml"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/drawable-v24_ic_launcher_background.xml.flat",
-        "source": "com.dam.android.app-main-31:/drawable-v24/ic_launcher_background.xml"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/layout_activity_login.xml.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/layout/activity_login.xml"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.dam.android.app-main-31:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/drawable-v24_logoletra48.png.flat",
-        "source": "com.dam.android.app-main-31:/drawable-v24/logoletra48.png"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/drawable-v24/ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/layout_departamento_list_header.xml.flat",
-        "source": "com.dam.android.app-main-31:/layout/departamento_list_header.xml"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/drawable-v24_moneybtn100selected.png.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/drawable-v24/moneybtn100selected.png"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.dam.android.app-main-31:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/drawable-v24_timebtnselector.xml.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/drawable-v24/timebtnselector.xml"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/drawable-v24_healthbtn100.png.flat",
-        "source": "com.dam.android.app-main-31:/drawable-v24/healthbtn100.png"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/drawable-v24_fondo.png.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/drawable-v24/fondo.png"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.dam.android.app-main-31:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/drawable-v24_timebtn100.png.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/drawable-v24/timebtn100.png"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/drawable-v24_moneybtn100.png.flat",
-        "source": "com.dam.android.app-main-31:/drawable-v24/moneybtn100.png"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/layout_actividad_list_header.xml.flat",
-        "source": "com.dam.android.app-main-31:/layout/actividad_list_header.xml"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/layout_dialog_input_box.xml.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/layout/dialog_input_box.xml"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/drawable-v24_speedbtnselector.xml.flat",
-        "source": "com.dam.android.app-main-31:/drawable-v24/speedbtnselector.xml"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/layout_actividad_list_item.xml.flat",
-        "source": "com.dam.android.app-main-31:/layout/actividad_list_item.xml"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/drawable-v24_timebtn100selected.png.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/drawable-v24/timebtn100selected.png"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.dam.android.app-main-31:/mipmap-anydpi-v26/ic_launcher_round.xml"
-    },
-    {
-        "merged": "com.dam.android.app-merged_res-29:/drawable-v24_timebtnselector.xml.flat",
-        "source": "com.dam.android.app-main-31:/drawable-v24/timebtnselector.xml"
-    },
-    {
-        "merged": "com.dam.android.app-merged_res-29:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.dam.android.app-main-31:/mipmap-mdpi/ic_launcher_round.webp"
-    },
-    {
-        "merged": "com.dam.android.app-merged_res-29:/drawable-v24_fondo_beige.png.flat",
-        "source": "com.dam.android.app-main-31:/drawable-v24/fondo_beige.png"
-    },
-    {
-        "merged": "com.dam.android.app-merged_res-29:/xml_data_extraction_rules.xml.flat",
-        "source": "com.dam.android.app-main-31:/xml/data_extraction_rules.xml"
-    },
-    {
-        "merged": "com.dam.android.app-merged_res-29:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.dam.android.app-main-31:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
         "merged": "com.dam.android.app-merged_res-29:/layout_activity_login.xml.flat",
         "source": "com.dam.android.app-main-31:/layout/activity_login.xml"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/layout_dialog_actividad_editar.xml.flat",
-        "source": "com.dam.android.app-main-31:/layout/dialog_actividad_editar.xml"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/xml_backup_rules.xml.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/xml/backup_rules.xml"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/layout_dialog_input_box.xml.flat",
-        "source": "com.dam.android.app-main-31:/layout/dialog_input_box.xml"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/drawable-v24_moneybtn100.png.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/drawable-v24/moneybtn100.png"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/menu_menu_general.xml.flat",
-        "source": "com.dam.android.app-main-31:/menu/menu_general.xml"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/drawable-v24_fondo.png.flat",
-        "source": "com.dam.android.app-main-31:/drawable-v24/fondo.png"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/layout_departamento_list_item.xml.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/layout/departamento_list_item.xml"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/drawable-v24_timebtn100selected.png.flat",
-        "source": "com.dam.android.app-main-31:/drawable-v24/timebtn100selected.png"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/drawable-v24_iax_logo.png.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/drawable-v24/iax_logo.png"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/drawable-v24_timebtn100.png.flat",
-        "source": "com.dam.android.app-main-31:/drawable-v24/timebtn100.png"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/drawable-v24_fondo_beige.png.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/drawable-v24/fondo_beige.png"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.dam.android.app-main-31:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/drawable-v24_speedbtn100selected.png.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/drawable-v24/speedbtn100selected.png"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/drawable-v24_moneybtnselector.xml.flat",
-        "source": "com.dam.android.app-main-31:/drawable-v24/moneybtnselector.xml"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/menu_menu_general.xml.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/menu/menu_general.xml"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/drawable-v24_healthbtnselector.xml.flat",
-        "source": "com.dam.android.app-main-31:/drawable-v24/healthbtnselector.xml"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/drawable-v24_healthbtn100selected.png.flat",
-        "source": "com.dam.android.app-main-31:/drawable-v24/healthbtn100selected.png"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/drawable-v24_moneybtnselector.xml.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/drawable-v24/moneybtnselector.xml"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/layout_departamento_list_item.xml.flat",
-        "source": "com.dam.android.app-main-31:/layout/departamento_list_item.xml"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/drawable-v24_healthbtn100selected.png.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/drawable-v24/healthbtn100selected.png"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.dam.android.app-main-31:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/drawable-v24_speedbtn100.png.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/drawable-v24/speedbtn100.png"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/drawable-v24_moneybtn100selected.png.flat",
-        "source": "com.dam.android.app-main-31:/drawable-v24/moneybtn100selected.png"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/layout_activity_actividades.xml.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/layout/activity_actividades.xml"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.dam.android.app-main-31:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/layout_activity_departamentos.xml.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/layout/activity_departamentos.xml"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "com.dam.android.app-main-31:/drawable-v24/ic_launcher_foreground.xml"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/drawable-v24_logoletra48.png.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/drawable-v24/logoletra48.png"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.dam.android.app-main-31:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.dam.android.app-main-31:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/drawable-v24_ic_launcher_background.xml.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/drawable-v24/ic_launcher_background.xml"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/layout_activity_actividades.xml.flat",
-        "source": "com.dam.android.app-main-31:/layout/activity_actividades.xml"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.dam.android.app-main-31:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/drawable-v24_healthbtnselector.xml.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/drawable-v24/healthbtnselector.xml"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/drawable-v24_iax_logo.png.flat",
-        "source": "com.dam.android.app-main-31:/drawable-v24/iax_logo.png"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/drawable-v24_recuadro_list_item.xml.flat",
-        "source": "com.dam.android.app-main-31:/drawable-v24/recuadro_list_item.xml"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/menu_menu_especial.xml.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/menu/menu_especial.xml"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/layout_activity_departamentos.xml.flat",
-        "source": "com.dam.android.app-main-31:/layout/activity_departamentos.xml"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/drawable-v24_recuadro_list_item.xml.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/drawable-v24/recuadro_list_item.xml"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/layout_activity_menu.xml.flat",
-        "source": "com.dam.android.app-main-31:/layout/activity_menu.xml"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/layout_actividad_list_header.xml.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/layout/actividad_list_header.xml"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/drawable-v24_speedbtn100.png.flat",
-        "source": "com.dam.android.app-main-31:/drawable-v24/speedbtn100.png"
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/drawable-v24_healthbtn100.png.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/drawable-v24/healthbtn100.png"
+    },
+    {
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/xml_data_extraction_rules.xml.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/layout_activity_menu.xml.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/layout/activity_menu.xml"
+    },
+    {
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/layout_departamento_list_header.xml.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/layout/departamento_list_header.xml"
+    },
+    {
+        "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/drawable-v24_speedbtnselector.xml.flat",
+        "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/drawable-v24/speedbtnselector.xml"
     }
 ]

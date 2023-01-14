@@ -34,7 +34,7 @@
         android:id="@+id/etPw"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
+        android:inputType="textPassword"
         android:hint="password"
         android:textSize="30sp"
         ></EditText>

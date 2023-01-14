@@ -25,4 +25,6 @@
     <string name="ok_cancel_dialog">OK CANCEL DIALOG</string>
     <string name="simple_info_ok_btn">Simple info ok btn</string>
     <string name="listado_deptos">DEPARTAMENTOS</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
