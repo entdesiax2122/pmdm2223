@@ -48,6 +48,7 @@ id etUs
 id layout_root
 id lvActividades
 id lvDeptos
+id pbCargaDptos
 id pbLogin
 id search
 id sobrenosotros
@@ -87,6 +88,7 @@ string delete
 string depto
 string edit
 string email
+string hello_blank_fragment
 string iax_title
 string id
 string iddepto

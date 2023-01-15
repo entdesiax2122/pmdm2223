@@ -34,8 +34,16 @@
         android:text="Nuevo departamento"
         android:id="@+id/btNuevoDepto"></Button>
 
+    <ProgressBar
+        android:id="@+id/pbCargaDptos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"></ProgressBar>
+
     <ListView android:id="@+id/lvDeptos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+
 
 </LinearLayout>

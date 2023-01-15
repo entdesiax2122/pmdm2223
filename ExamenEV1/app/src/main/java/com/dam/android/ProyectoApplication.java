@@ -4,12 +4,14 @@ import android.app.Application;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.dam.android.api.DepartamentoRetrofit;
 import com.dam.android.api.LoginResponse;
 import com.dam.android.api.LoginRetrofit;
 import com.dam.android.modelos.Usuario;
 import com.dam.android.repositorios.ActividadRepositorio;
 import com.dam.android.repositorios.ActividadRepositorioSQLiteImpl;
 import com.dam.android.repositorios.DepartamentoRepositorio;
+import com.dam.android.repositorios.DepartamentoRepositorioBackendImpl;
 import com.dam.android.repositorios.DepartamentoRepositorioSQLiteImpl;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -25,6 +27,8 @@ public class ProyectoApplication extends Application {
     private static Retrofit retrofit;
     private static final String BASE_URL_API = "http://34.175.24.197:8080/"; // PROD
     private static LoginRetrofit loginRetrofit;
+
+    private static DepartamentoRetrofit departamentoRetrofit;
     public static LoginResponse loginResponse;
     public static Usuario usuarioApp;
 
@@ -40,8 +44,9 @@ public class ProyectoApplication extends Application {
     public static DepartamentoRepositorio getDepartamentoRepositorio() {
         if (departamentoRepositorio == null) {
             // aquí decidimos qué implementación queremos usar
-            departamentoRepositorio = new DepartamentoRepositorioSQLiteImpl(db);
+//            departamentoRepositorio = new DepartamentoRepositorioSQLiteImpl(db);
             // departamentoRepositorio = new DepartamentoRepositorioListImpl();
+            departamentoRepositorio = new DepartamentoRepositorioBackendImpl();
         }
         return departamentoRepositorio;
     }
@@ -62,10 +67,14 @@ public class ProyectoApplication extends Application {
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
         loginRetrofit = retrofit.create(LoginRetrofit.class);
+        departamentoRetrofit = retrofit.create(DepartamentoRetrofit.class);
     }
 
     public static LoginRetrofit getLoginRetrofit() {
         return loginRetrofit;
     }
 
+    public static DepartamentoRetrofit getDepartamentoRetrofit() {
+        return departamentoRetrofit;
+    }
 }

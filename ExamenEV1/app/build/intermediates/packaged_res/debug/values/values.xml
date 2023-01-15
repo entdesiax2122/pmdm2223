@@ -21,6 +21,7 @@
     <string name="depto">Departamento</string>
     <string name="edit">Editar</string>
     <string name="email">Email</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="iax_title">IAX</string>
     <string name="id">Id</string>
     <string name="iddepto">Id Depto</string>

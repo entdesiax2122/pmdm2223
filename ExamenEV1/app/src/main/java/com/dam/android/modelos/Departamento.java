@@ -5,9 +5,18 @@ import java.util.Objects;
 public class Departamento {
     private Integer id;
     private String nombre;
+    private Boolean activado = true;
+    private Boolean eliminado = false;
 
     public Departamento(String nombre) {
         this.nombre = nombre;
+    }
+
+    public Departamento(Integer id, String nombre, Boolean activado, Boolean eliminado) {
+        this.id = id;
+        this.nombre = nombre;
+        this.activado = activado;
+        this.eliminado = eliminado;
     }
 
     @Override
@@ -29,6 +38,22 @@ public class Departamento {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public Boolean getActivado() {
+        return activado;
+    }
+
+    public void setActivado(Boolean activado) {
+        this.activado = activado;
+    }
+
+    public Boolean getEliminado() {
+        return eliminado;
+    }
+
+    public void setEliminado(Boolean eliminado) {
+        this.eliminado = eliminado;
     }
 
     @Override

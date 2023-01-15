@@ -60,10 +60,6 @@
         "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.dam.android.app-merged_res-29:/layout_activity_login.xml.flat",
-        "source": "com.dam.android.app-main-31:/layout/activity_login.xml"
-    },
-    {
         "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/xml_backup_rules.xml.flat",
         "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/xml/backup_rules.xml"
     },
@@ -178,6 +174,10 @@
     {
         "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/layout_departamento_list_header.xml.flat",
         "source": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-main-31:/layout/departamento_list_header.xml"
+    },
+    {
+        "merged": "com.dam.android.app-merged_res-29:/layout_activity_departamentos.xml.flat",
+        "source": "com.dam.android.app-main-31:/layout/activity_departamentos.xml"
     },
     {
         "merged": "/home/rodrigo/.gradle/daemon/7.3.3/com.dam.android.app-merged_res-29:/drawable-v24_speedbtnselector.xml.flat",

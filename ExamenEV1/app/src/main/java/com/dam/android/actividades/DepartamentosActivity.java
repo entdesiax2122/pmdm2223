@@ -1,5 +1,6 @@
 package com.dam.android.actividades;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -9,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +26,7 @@ import com.dam.android.modelos.Departamento;
 import com.dam.android.repositorios.DepartamentoRepositorio;
 import com.dam.android.util.Utilidades;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DepartamentosActivity extends AppCompatActivity {
@@ -35,6 +38,8 @@ public class DepartamentosActivity extends AppCompatActivity {
     private DepartamentoAdapter adaptadorDeptos;
     private View oldViewGround;
     private int indiceDepartamento = -1;
+
+    private ProgressBar pbCargaDptos;
 
     // Inicio métodos necesarios para manejar NavigateUp y OptionsMenu.
     @Override
@@ -95,6 +100,7 @@ public class DepartamentosActivity extends AppCompatActivity {
         btNuevoDepto = (Button) findViewById(R.id.btNuevoDepto);
         etNombre = (EditText) findViewById(R.id.etNombre);
         lvDeptos = (ListView) findViewById(R.id.lvDeptos);
+        pbCargaDptos = (ProgressBar) findViewById(R.id.pbCargaDptos);
 
         // preparar y cargar listview de departamentos
         // añadimos la cabecera
@@ -105,7 +111,7 @@ public class DepartamentosActivity extends AppCompatActivity {
             lvDeptos.addHeaderView(header);
         }
         // cargamos la lista de departamentos
-        lista = departamentoRepositorio.recuperarTodos();
+        lista = new ArrayList<>();
         // creamos el Adaptador personalizado y se lo añadimos al ListView
         adaptadorDeptos = new DepartamentoAdapter(getBaseContext(), lista, new OnSubmitSimpleListener() {
             @Override
@@ -143,13 +149,16 @@ public class DepartamentosActivity extends AppCompatActivity {
                 if (Utilidades.validarCampoObligatorio(etNombre, getString(R.string.campoobligatorio))) {
                     Departamento d = new Departamento(etNombre.getText().toString());
                     etNombre.setText("");
-                    departamentoRepositorio.guardar(d);
-                    lista = departamentoRepositorio.recuperarTodos();
-                    adaptadorDeptos.setListDepartamentos(lista);
-                    adaptadorDeptos.notifyDataSetChanged();
-                }
+                    new ActualizarDepartamentoTaks(d).execute();
+               }
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        new CargarDepartamentosTask().execute();
     }
 
     public void editarDepto(View view) {
@@ -163,11 +172,7 @@ public class DepartamentosActivity extends AppCompatActivity {
                         @Override
                         public void submit(Object result) {
                             d.setNombre((String) result);
-                            departamentoRepositorio.guardar(d);
-                            lista = departamentoRepositorio.recuperarTodos();
-                            adaptadorDeptos.setListDepartamentos(lista);
-                            adaptadorDeptos.notifyDataSetChanged();
-                            Toast.makeText(DepartamentosActivity.this, "Departamento actualizado ...", Toast.LENGTH_SHORT).show();
+                            new ActualizarDepartamentoTaks(d).execute();
                         }
                     },
                     null
@@ -187,20 +192,8 @@ public class DepartamentosActivity extends AppCompatActivity {
                         indiceDepartamento = adaptadorDeptos.getAdapterItemPosition(view);
                         if (indiceDepartamento != -1 && adaptadorDeptos.getCount() > 0) {
                             Departamento d = lista.get(indiceDepartamento);
-                            departamentoRepositorio.eliminar(d);
-                            SimpleInfoOkBtnDialog info = new SimpleInfoOkBtnDialog();
-                            info.setConfiguration("Depto borrado",
-                                    "Se ha borrado el departamento", "Aceptar",
-                                    new OnSubmitSimpleListener() {
-                                        @Override
-                                        public void submit(Object result) {
-                                            // no se recarga la lista hasta que se pulsa aceptar
-                                            lista = departamentoRepositorio.recuperarTodos();
-                                            adaptadorDeptos.setListDepartamentos(lista);
-                                            adaptadorDeptos.notifyDataSetChanged();
-                                        }
-                                    });
-                            info.show(getFragmentManager(), "deptoborrado");
+                            d.setEliminado(true);
+                            new ActualizarDepartamentoTaks(d).execute();
                         }
                     }
                 },
@@ -220,6 +213,75 @@ public class DepartamentosActivity extends AppCompatActivity {
                     }
                 });
         dialog.show(getFragmentManager(), "Etiqueta dialogo");
+    }
+
+
+
+    private class CargarDepartamentosTask extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected void onPreExecute() {
+            lvDeptos.setVisibility(View.GONE);
+            pbCargaDptos.setVisibility(View.VISIBLE);
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            lista = ProyectoApplication.getDepartamentoRepositorio().recuperarTodos();
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void params) {
+            lvDeptos.setVisibility(View.VISIBLE);
+            pbCargaDptos.setVisibility(View.GONE);
+
+            if (lista == null) {
+                Toast.makeText(DepartamentosActivity.this, "Error al cargar los departamentos", Toast.LENGTH_SHORT).show();
+                lista = new ArrayList<>();
+            }
+
+            adaptadorDeptos.setListDepartamentos(lista);
+            adaptadorDeptos.notifyDataSetChanged();
+            indiceDepartamento = -1;
+        }
+    }
+
+    private class ActualizarDepartamentoTaks extends AsyncTask<Void, Void, Void> {
+        private Departamento departamento;
+
+        public ActualizarDepartamentoTaks(Departamento departamento) {
+            this.departamento = departamento;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            lvDeptos.setVisibility(View.GONE);
+            pbCargaDptos.setVisibility(View.VISIBLE);
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            departamentoRepositorio.guardar(departamento);
+            lista = ProyectoApplication.getDepartamentoRepositorio().recuperarTodos();
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void params) {
+            lvDeptos.setVisibility(View.VISIBLE);
+            pbCargaDptos.setVisibility(View.GONE);
+
+            if (lista == null) {
+                Toast.makeText(DepartamentosActivity.this, "Error al actualizar el departamento", Toast.LENGTH_SHORT).show();
+                lista = new ArrayList<>();
+            } else {
+                Toast.makeText(DepartamentosActivity.this, "Departamento actualizado con éxito", Toast.LENGTH_SHORT).show();
+            }
+
+            adaptadorDeptos.setListDepartamentos(lista);
+            adaptadorDeptos.notifyDataSetChanged();
+            indiceDepartamento = -1;
+        }
     }
 
 }
