@@ -3,6 +3,8 @@ package com.example.sonido;
 import androidx.appcompat.app.AppCompatActivity;
 //import android.content.Context;
 //import android.content.Intent;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 //import android.media.SoundPool;
 import android.net.Uri;
@@ -35,22 +37,13 @@ public class MainActivity extends AppCompatActivity {
         bpausa = (Button)findViewById(R.id.playSp);
         bint=(Button)findViewById(R.id.playMpInt);
 
-
-        //mediaController.setMediaPlayer(MediaController.MediaPlayerControl);
-
-
         mp = MediaPlayer.create(this, R.raw.ines);
-        urlPlayer = MediaPlayer.create(this,
-                Uri.parse("http://hcmaslov.d-real.sci-nnov.ru/public/mp3/Queen/Queen%20''39'.mp3"));
 
-
-        //mediaController.setAnchorView(mp);
         mediaController.show();
 
         bplay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 mp.start();
             }
         });
@@ -58,35 +51,33 @@ public class MainActivity extends AppCompatActivity {
         bint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                urlPlayer.start();
+                MediaPlayer player = MediaPlayer.create(MainActivity.this, Uri.parse("http://www.all-birds.com/Sound/western%20bluebird.wav"));
+                player.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                    @Override
+                    public void onPrepared(MediaPlayer mp) {
+                        mp.start();
+                    }
+                });
             }
         });
 
         bstop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 mp.stop();
                 try {
                     mp.prepare();
                 }catch (IOException e){
-
                 }
             }
 
         });
 
-
         bpausa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 mp.pause();
-
             }
         });
-
-
     }
 }
