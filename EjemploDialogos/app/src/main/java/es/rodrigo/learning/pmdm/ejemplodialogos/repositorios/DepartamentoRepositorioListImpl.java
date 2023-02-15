@@ -1,6 +1,7 @@
 package es.rodrigo.learning.pmdm.ejemplodialogos.repositorios;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import es.rodrigo.learning.pmdm.ejemplodialogos.modelos.Departamento;
 
@@ -42,5 +43,10 @@ public class DepartamentoRepositorioListImpl implements DepartamentoRepositorio 
     @Override
     public ArrayList<Departamento> recuperarTodos() {
         return lista;
+    }
+
+    @Override
+    public List<Departamento> buscarPorNombre(String filtro) {
+        return null;
     }
 }

@@ -27,11 +27,27 @@
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:id="@+id/etNombre"></EditText>
-    <Button
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nuevo departamento"
-        android:id="@+id/btNuevoDepto"></Button>
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nuevo depto"
+            android:id="@+id/btNuevoDepto"></Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Borrar Depto"
+            android:id="@+id/btBorrarDepto"></Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buscar Depto"
+            android:id="@+id/btBuscarDepto"></Button>
+    </LinearLayout>
 
     <ListView android:id="@+id/lvDeptos"
         android:layout_width="match_parent"

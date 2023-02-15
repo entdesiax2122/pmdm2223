@@ -36,6 +36,8 @@ public class DepartamentosActivity extends AppCompatActivity {
     private DepartamentoAdapter adaptadorDeptos;
     private View oldViewGround;
     private int indiceDepartamento = -1;
+    private Button btBorrarDepto;
+    private Button btBuscarDepto;
 
     // Inicio métodos necesarios para manejar NavigateUp y OptionsMenu.
     @Override
@@ -81,14 +83,14 @@ public class DepartamentosActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(getString(R.string.iax_title));
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         // Fin ActionBar
-        
-
 
         departamentoRepositorio =
                 ProyectoApplication.getDepartamentoRepositorio();
         btNuevoDepto = (Button) findViewById(R.id.btNuevoDepto);
         etNombre = (EditText) findViewById(R.id.etNombre);
         lvDeptos = (ListView) findViewById(R.id.lvDeptos);
+        btBorrarDepto = findViewById(R.id.btBorrarDepto);
+        btBuscarDepto = findViewById(R.id.btBuscarDepto);
 
         // preparar y cargar listview de departamentos
         // añadimos la cabecera
@@ -149,6 +151,57 @@ public class DepartamentosActivity extends AppCompatActivity {
                     adaptadorDeptos.setListDepartamentos(lista);
                     adaptadorDeptos.notifyDataSetChanged();
                 }
+            }
+        });
+
+        btBorrarDepto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (indiceDepartamento != -1) {
+                    Departamento d = lista.get(indiceDepartamento);
+
+                    OkCancelDialog dialog = new OkCancelDialog();
+                    dialog.setConfiguration("Borrar departamento", "¿Estás seguro de borrar el departamento?",
+                            "Aceptar", "Cancelar", new OnSubmitSimpleListener() {
+                                @Override
+                                public void submit(Object result) {
+                                    departamentoRepositorio.eliminar(d);
+                                    Toast.makeText(DepartamentosActivity.this, "Departamento borrado ...", Toast.LENGTH_SHORT).show();
+                                    lista = departamentoRepositorio.recuperarTodos();
+                                    adaptadorDeptos.setListDepartamentos(lista);
+                                    adaptadorDeptos.notifyDataSetChanged();
+                                    indiceDepartamento = -1;
+                                }
+                            }, null);
+                    dialog.show(getFragmentManager(), "Etiqueta borrar");
+                }
+            }
+        });
+
+        btBuscarDepto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                InputBoxDialog dialog = new InputBoxDialog();
+                dialog.setConfiguration(null, "Introduce un nombre para filtrar departamento:",
+                        "Buscar", "Cancelar",
+                        new OnSubmitSimpleListener() {
+                            @Override
+                            public void submit(Object result) {
+                                String filtro = (String) result;
+                                lista = departamentoRepositorio.buscarPorNombre(filtro);
+                                adaptadorDeptos.setListDepartamentos(lista);
+                                adaptadorDeptos.notifyDataSetChanged();
+                            }
+                        }, new OnSubmitSimpleListener() {
+                            @Override
+                            public void submit(Object result) {
+                                lista = departamentoRepositorio.recuperarTodos();
+                                adaptadorDeptos.setListDepartamentos(lista);
+                                adaptadorDeptos.notifyDataSetChanged();
+                            }
+                        });
+
+                dialog.show(getFragmentManager(), "Dialogo buscar");
             }
         });
     }

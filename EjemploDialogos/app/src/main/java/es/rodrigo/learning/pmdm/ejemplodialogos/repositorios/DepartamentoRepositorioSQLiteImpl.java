@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import es.rodrigo.learning.pmdm.ejemplodialogos.modelos.Departamento;
 
@@ -85,6 +86,23 @@ public class DepartamentoRepositorioSQLiteImpl implements DepartamentoRepositori
     public ArrayList<Departamento> recuperarTodos() {
         ArrayList<Departamento> lista = new ArrayList<>();
         Cursor c = db.rawQuery("SELECT * FROM departamentos", null);
+        if (c.getCount()>0) {
+            while (c.moveToNext()) {
+                Departamento d = new Departamento(c.getString(1));
+                d.setId(c.getInt(0));
+                lista.add(d);
+            }
+        }
+        c.close();
+        return lista;
+    }
+
+    @Override
+    public List<Departamento> buscarPorNombre(String filtro) {
+        ArrayList<Departamento> lista = new ArrayList<>();
+
+        String[] selectionArgs = {"%" + filtro + "%"};
+        Cursor c = db.rawQuery("SELECT * FROM departamentos WHERE nombre LIKE ?", selectionArgs);
         if (c.getCount()>0) {
             while (c.moveToNext()) {
                 Departamento d = new Departamento(c.getString(1));

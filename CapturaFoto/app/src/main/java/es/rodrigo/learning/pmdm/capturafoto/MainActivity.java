@@ -6,6 +6,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.FileProvider;
 
 import android.Manifest;
 import android.content.Intent;
@@ -60,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
                     Bitmap bitmap = (Bitmap) bundle.get("data");
                     ivFoto.setImageBitmap(bitmap);
                 }
+                if (result.getResultCode() == RESULT_OK && result.getData() == null) {
+                    Toast.makeText(MainActivity.this, "Imagen guardada en: " + mCurrentPhotoPath, Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -67,11 +71,14 @@ public class MainActivity extends AppCompatActivity {
         btnCapturaFotoyGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                pedirPermisosSiNoSeTienen();
                 dispatchTakePictureIntentAndSave();
             }
         });
+
+        pedirPermisosSiNoSeTienen();
     }
+
+
 
     static String[] PERMISOS = {Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE};
     private void pedirPermisosSiNoSeTienen() {
@@ -117,8 +124,14 @@ public class MainActivity extends AppCompatActivity {
             }
             // Continue only if the File was successfully created
             if (photoFile != null) {
-                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT,
-                        Uri.fromFile(photoFile));
+                Uri photoURI = FileProvider.getUriForFile(this,
+                        "es.rodrigo.learning.pmdm.capturafoto.fileprovider",
+                        photoFile);
+                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+
+//                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT,
+//                        Uri.fromFile(photoFile));
+
 //                startActivityForResult(takePictureIntent, CAPTURA_IMAGEN_TAMAÑO_REAL);
                 activityResultLauncher.launch(takePictureIntent);
             }
@@ -126,13 +139,38 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private File createImageFile() throws IOException {
-        // Create an image file name
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String imageFileName = "JPEG_" + timeStamp + "_";
-        File storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
-        File imageFile = File.createTempFile(imageFileName,".jpg", storageDir);
-        mCurrentPhotoPath = "file:" + imageFile.getAbsolutePath();
-        return imageFile;
+        try {
+            // Create an image file name
+            String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+            String imageFileName = "JPEG_" + timeStamp + "_";
+
+            File path = Environment.getExternalStorageDirectory();
+
+            File dir = new File(path, getBaseContext().getString(R.string.app_files_dir));
+
+            File parent = dir.getParentFile();
+            if (parent != null) {
+                parent.mkdirs();
+            }
+
+            if (!dir.exists()) {
+                dir.mkdirs();
+            }
+
+            File image = File.createTempFile(
+                    imageFileName,  /* prefix */
+                    ".jpg",         /* suffix */
+                    dir      /* directory */
+            );
+
+            // Save a file: path for use with ACTION_VIEW intents
+            mCurrentPhotoPath = image.getAbsolutePath();
+            return image;
+        } catch (Exception e) {
+            Log.e("Error", e.getMessage());
+            e.printStackTrace();
+            return null;
+        }
     }
 
 
