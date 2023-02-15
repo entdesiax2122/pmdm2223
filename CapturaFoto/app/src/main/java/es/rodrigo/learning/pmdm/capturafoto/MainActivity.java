@@ -58,8 +58,12 @@ public class MainActivity extends AppCompatActivity {
             public void onActivityResult(ActivityResult result) {
                 if (result.getResultCode() == RESULT_OK && result.getData() != null) {
                     Bundle bundle = result.getData().getExtras();
-                    Bitmap bitmap = (Bitmap) bundle.get("data");
-                    ivFoto.setImageBitmap(bitmap);
+                    if (bundle != null) {
+                        Bitmap bitmap = (Bitmap) bundle.get("data");
+                        ivFoto.setImageBitmap(bitmap);
+                    } else {
+                        Toast.makeText(MainActivity.this, "Imagen guardada en: " + mCurrentPhotoPath, Toast.LENGTH_SHORT).show();
+                    }
                 }
                 if (result.getResultCode() == RESULT_OK && result.getData() == null) {
                     Toast.makeText(MainActivity.this, "Imagen guardada en: " + mCurrentPhotoPath, Toast.LENGTH_SHORT).show();
