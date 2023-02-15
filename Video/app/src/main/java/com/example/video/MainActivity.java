@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
         mc.setAnchorView(videoView);
         videoView.setMediaController(mc);
 
-        Uri path = Uri.parse("android.resource://com.example.video/" + R.raw.eldls);
-        //Uri path = Uri.parse("http://techslides.com/demos/sample-videos/small.mp4");
+//        Uri path = Uri.parse("android.resource://com.example.video/" + R.raw.eldls);
+        Uri path = Uri.parse("http://techslides.com/demos/sample-videos/small.mp4");
 
         //Uri path = Uri.parse("rtsp://v4.cache1.c.youtube.com/CiILENy73wIaGQk4RDShYkdS1BMYDSANFEgGUgZ2aWRlb3MM/0/0/0/video.3gp");
 
