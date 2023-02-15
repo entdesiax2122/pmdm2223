@@ -18,10 +18,17 @@
         android:id="@+id/btnCapturaFoto"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Capturar Foto" />
+        android:text="Capturar miniatura" />
 
-    <androidx.constraintlayout.utils.widget.ImageFilterView
+    <ImageView
         android:id="@+id/ivFoto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="317dp" />
+
+    <Button
+        android:id="@+id/btnCapturaFotoyGuardar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Capturar y guardar" />
+
 </LinearLayout>
